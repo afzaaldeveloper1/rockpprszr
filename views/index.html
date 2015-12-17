@@ -77,5 +77,16 @@
 	} else {
     	computerChoice = "scissors";
 	}
+	document.getElementById("box1").onclick= function(){
+		if(computerChoice == "rock"){
+			alert("It is a tie, You chose Rock, computer chose Rock, Lame!");
+		}
+		else if(computerChoice =="paper"){
+			alert("Sucker, YOU LOST! You chose Rock, COMPUTER OVERLORD chose paper");
+		}
+		else if(computerChoice=="scissors"){
+			alert("DANG! You Beat Computer OVERLORD cuz he chose scissors");
+		}
+	}
 </script>
 </body>
