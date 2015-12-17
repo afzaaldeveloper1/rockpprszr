@@ -46,6 +46,14 @@
 		}
 	}
 	i++;
+	return counter;
+}
+var computerWins = 5-counter;
+if (computerWins > counter) {
+    console.log("COMPUTER OVERLORD WINS, HE IS YOUR MASTER!");
+}
+else {
+    console.log("Hey computer overlord and you can be friends, just dont tell anyone you lost, k");
 }
 
 </script>
