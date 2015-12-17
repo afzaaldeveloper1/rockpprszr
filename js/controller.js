@@ -8,7 +8,7 @@
     	computerChoice = "scissors";
 	}
 	var counter = 0;
-	for(i=1; i<5; i++) {
+	for(i=1; i<6; i++) {
 	document.getElementById("box1").onclick= function(){
 		if(computerChoice == "rock"){
 			alert("It is a tie, You chose Rock, computer chose Rock, Lame!");
@@ -18,6 +18,7 @@
 		}
 		else if(computerChoice=="scissors"){
 			alert("DANG! You Beat Computer OVERLORD cuz he chose scissors");
+			counter++;
 		}
 	}
 	document.getElementById("box2").onclick= function(){
@@ -29,6 +30,7 @@
 		}
 		else if(computerChoice=="rock"){
 			alert("DANG! You Beat Computer OVERLORD cuz he chose rock");
+			counter++;
 		}
 	}
 	document.getElementById("box3").onclick= function(){
@@ -40,8 +42,10 @@
 		}
 		else if(computerChoice=="paper"){
 			alert("DANG! You Beat Computer OVERLORD cuz he chose paper");
+			counter++;
 		}
 	}
-	i= i+1;
+	i++;
 }
+
 </script>
