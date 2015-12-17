@@ -12,23 +12,26 @@
      
 </head>
 <style>
+    .container h3 {
+        color:#FFFFFF;
+    }
+    
 	#box1 {
 	width:200px;
 	height:200px;
-	background-color: red;
-	display:none;
+	background-color:#0000FF;
 	}
+	
 	#box2 {
 	width:200px;
 	height:200px;
-	background-color: red;
-	display:none;
+	background-color:#00FF00;
 	}
+	
 	#box3 {
 	width:200px;
 	height:200px;
-	background-color: red;
-	display:none;
+	background-color:#FF0000;
 	}
 </style>
 <body>
@@ -50,10 +53,20 @@
     </div>
     <div class="container">
         <div class="row">
-            <div class="col-md-4" id="box1"></div>
-            <div class="col-md-4" id="box2"></div>
-            <div class="col-md-4" id="box3"></div>
+            <div class="col-md-4" id="box1">
+                <h3>ROCK</h3>
+            </div>
+            <div class="col-md-4" id="box2">
+                <h3>PAPERS</h3>
+            </div>
+            <div class="col-md-4" id="box3">
+                <h3>Scissors<h3>
+            </div>
         </div> 
     </div>
-    
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="js/bootstrap.min.js"></script>
+<script type="text/javascript">
 </body>
