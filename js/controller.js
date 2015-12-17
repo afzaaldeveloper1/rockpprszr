@@ -7,8 +7,9 @@
 	} else {
     	computerChoice = "scissors";
 	}
-	var counter = 0;
+	
 	for(i=1; i<6; i++) {
+	var counter =0;
 	document.getElementById("box1").onclick= function(){
 		if(computerChoice == "rock"){
 			alert("It is a tie, You chose Rock, computer chose Rock, Lame!");
