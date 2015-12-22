@@ -1,79 +1,52 @@
 <script type="text/javascript">
-var userScore =0;
-var comScore = 0;
-var i=0;
-for (i=1; i<6; i++) {
-	var computerChoice = Math.random();
-	
-	if (computerChoice < 0.33) {
-    	computerChoice = "rock";
-	}else if(computerChoice <= 0.66) {
-    	computerChoice = "paper";
-	} else {
-    	computerChoice = "scissors";
-	}
-	document.getElementById("box1").onclick= function() {
-		if(computerChoice == "rock"){
-			alert("It is a tie, You chose Rock, computer chose Rock, Lame!");
-			return userScore =0;
-			return comScore = 0;
-		}
-		else if(computerChoice =="paper"){
-			alert("Sucker, YOU LOST! You chose Rock, COMPUTER OVERLORD chose paper");
-			return userScore=0;
-			return comScore++;
-		}
-		else if(computerChoice=="scissors"){
-			alert("DANG! You Beat Computer OVERLORD cuz he chose scissors");
-			return userScore++;
-			return comScore=0;
-		}
-	}
-	document.getElementById("box2").onclick= function(){
-		if(computerChoice == "paper"){
-			alert("It is a tie, You chose Paper, computer chose Paper, Lame!");
-			return userScore =0;
-			return comScore = 0;
-		}
-		else if(computerChoice =="scissors"){
-			alert("Sucker, YOU LOST! You chose Paper, COMPUTER OVERLORD chose scissors");
-			return userScore =0;
-			return comScore++;
-		}
-		else if(computerChoice=="rock"){
-			alert("DANG! You Beat Computer OVERLORD cuz he chose rock");
-			return userScore++;
-			return comScore = 0;
-		}	
-	}
-	document.getElementById("box3").onclick= function(){
-		if(computerChoice == "scissors"){
-			alert("It is a tie, You chose scissors, computer chose scissors, Lame!");
-			return userScore =0;
-			return comScore = 0;
-		}
-		else if(computerChoice =="rock"){
-			alert("Sucker, YOU LOST! You chose scissors, COMPUTER OVERLORD chose rock");
-			return userScore =0;
-			return comScore++;
-		}
-		else if(computerChoice=="paper"){
-			alert("DANG! You Beat Computer OVERLORD cuz he chose paper");
-			return userScore++;
-			return comScore = 0;
-		}
-	}
-	i++;
-	
+var roundCount = 0;
+var userScore = 0;
+var compScore = 0;
+
+$(".btn-primary").on("click", function() {
+	if(roundCount++ === 5) {
+  	alert("Human: " + userScore + "\nComp: " + compScore);
+    return;
+  }
+	var userChoice = parseInt($(this).val());
+  var computerChoice = Math.floor(Math.random() * 3);
+
+  
+  $("#humanChoice").html(userChoice);
+  $("#computerChoice").html(computerChoice);
+  
+  switch(getWinner(userChoice, computerChoice)) {
+  	case -1:
+    	alert("You lose");
+      compScore++;
+      break;
+    case 0:
+    	alert("Tie");
+      break;
+    case 1:
+    	alert("You win");
+      userScore++;
+      break;
+  };
+});
+
+function getWinner(userChoice, computerChoice) {
+  if (userChoice === computerChoice) {
+		return 0;
+  } else if(userChoice === 0 && computerChoice === 1){
+		return -1;
+  } else if(userChoice === 0 && computerChoice === 2) {
+		return 1;
+  } else if(userChoice === 1 && computerChoice === 0) {
+		return 1;
+  } else if(userChoice === 1 && computerChoice === 2) {
+		return -1;
+  } else if(userChoice === 2 && computerChoice === 0) {
+		return -1;
+  } else if(userChoice === 2 && computerChoice === 1) {
+		return 1;
+  }
 }
 
-if (comScore > userScore) {
-    console.log("COMPUTER OVERLORD WINS, HE IS YOUR MASTER!");
-}
-else if (comScore > userScore){
-   	 console.log("Hey computer overlord and you can be friends, just dont tell anyone you lost, k");
-}
-else {
-	console.log("Looks like no one wins");
-}
+
 </script>
